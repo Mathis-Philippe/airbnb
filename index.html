@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Clone</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="image/logo2.png" class="logo_png" alt="logo">
+                <img src="image/airbnb.png" class="logo_png2" alt="airbnb typo">
+            </div>
+            <div class="nav-buttons">
+                <button>Devenez hôte</button>
+                <button>Mon compte</button>
+                <a href=""><img src="image/insigne-de-2eme-position.png" class="badge" alt=""></a>
+                <button id="theme-toggle">
+                    <span id="theme-icon">☀️</span>
+                    <span id="theme-text">Mode Sombre</span>
+                </button>
+            </div> 
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="image/LA.jpg" alt="Hero Image" class="hero-image"/>
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Découvrez des logements uniques</h1>
+                <p>Réservez des hébergements et des expériences inoubliables partout dans le monde.</p>
+                <button class="hero-button">Commencer la recherche</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-grid">
+            <div class="search-item">
+                <label>Destination</label>
+                <input type="text" placeholder="Où allez-vous ?">
+            </div>
+            <div class="search-item">
+                <label>Arrivée</label>
+                <input type="date">
+            </div>
+            <div class="search-item">
+                <label>Départ</label>
+                <input type="date">
+            </div>
+            <div class="search-item">
+                <label>Voyageurs</label>
+                <select>
+                    <option>1 voyageur</option>
+                    <option>2 voyageurs</option>
+                    <option>3 voyageurs</option>
+                    <option>4+ voyageurs</option>
+                </select>
+            </div>
+            <div class="search_button">
+                <a href="#">
+                    <img src="image/1x/loupe.png" alt="search">
+                </a>
+            </div>
+        </div>
+        <div class="search_button2">
+            <button>Rechercher</button>
+        </div>
+    </div>
+
+    <!-- Destinations Section -->
+    <section class="destinations">
+        <h2 class="section-title">Destinations populaires</h2>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="image/paris.jpg" alt="Paris" class="destination-image"/>
+                <div class="destination-info">
+                    <h3>Paris</h3>
+                    <p>À partir de 89€/nuit</p>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="image/londres.jpg" alt="Londres" class="destination-image"/>
+                <div class="destination-info">
+                    <h3>Londres</h3>
+                    <p>À partir de 120€/nuit</p>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="image/rome.jpg" alt="Rome" class="destination-image"/>
+                <div class="destination-info">
+                    <h3>Rome</h3>
+                    <p>À partir de 75€/nuit</p>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="image/barcelona.jpg" alt="Barcelone" class="destination-image"/>
+                <div class="destination-info">
+                    <h3>Barcelone</h3>
+                    <p>À partir de 95€/nuit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay Types Section -->
+    <section class="stay-types">
+        <div class="stay-types-container">
+            <h2 class="section-title">Types d'hébergements</h2>
+            <div class="stay-types-grid">
+                <div class="stay-card">
+                    <img src="image/appartement.jpg" alt="Appartements" class="stay-image"/>
+                    <div class="stay-info">
+                        <h3>Appartements entiers</h3>
+                        <p>Des logements entièrement équipés</p>
+                    </div>
+                </div>
+                <div class="stay-card">
+                    <img src="image/maison.jpg" alt="Maisons" class="stay-image"/>
+                    <div class="stay-info">
+                        <h3>Maisons uniques</h3>
+                        <p>Des lieux de caractère</p>
+                    </div>
+                </div>
+                <div class="stay-card">
+                    <img src="image/luxe.jpg" alt="Luxe" class="stay-image"/>
+                    <div class="stay-info">
+                        <h3>Luxe</h3>
+                        <p>Des logements d'exception</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Random trip -->
+
+    <div class="max-w-6xl mx-auto p-6">
+        <!-- En-tête -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-4">Découvrez votre prochaine aventure</h1>
+            <p class="text-gray-600 mb-6">Laissez-nous vous surprendre avec une destination unique</p>
+            <button id="generateBtn" class="generate-btn">
+                <span class="flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                    </svg>
+                    Générer un voyage
+                </span>
+            </button>
+        </div>
+
+        <!-- Conteneur des résultats -->
+        <div id="tripResults" class="hidden space-y-8">
+            <!-- Destination et Logement -->
+            <div class="grid gap-8 md:grid-cols-2">
+                <!-- Carte Destination -->
+                <div class="card">
+                    <div class="relative">
+                        <img id="destinationImage" src="" alt="" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full">
+                            <span class="text-sm font-semibold text-rose-500">Destination</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <svg class="h-6 w-6 text-rose-500 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <h2 id="destinationName" class="text-2xl font-semibold"></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Logement -->
+                <div class="card">
+                    <div class="relative">
+                        <img id="accommodationImage" src="" alt="" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full">
+                            <span id="accommodationPrice" class="text-sm font-semibold text-rose-500"></span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <svg class="h-6 w-6 text-rose-500 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <h2 id="accommodationName" class="text-2xl font-semibold"></h2>
+                        </div>
+                        <p id="accommodationDescription" class="text-gray-600"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Activités -->
+            <div class="card">
+                <div class="relative">
+                    <img id="activitiesImage" src="" alt="Activités" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full">
+                        <span class="text-sm font-semibold text-rose-500">Activités suggérées</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-6 w-6 text-rose-500 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                        <h2 class="text-2xl font-semibold">Expériences à ne pas manquer</h2>
+                    </div>
+                    <div id="activitiesList" class="grid md:grid-cols-3 gap-4">
+                        <!-- Les activités seront insérées ici -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton Autre suggestion -->
+            <div class="mt-8 text-center">
+                <button onclick="generateTrip()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-2 rounded-full">
+                    Autre suggestion
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>À propos</h3>
+                    <ul>
+                        <li><a href="#">Comment ça marche</a></li>
+                        <li><a href="#">Investisseurs</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Communauté</h3>
+                    <ul>
+                        <li><a href="#">Diversité et intégration</a></li>
+                        <li><a href="#">Accessibilité</a></li>
+                        <li><a href="#">Partenaires</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hôte</h3>
+                    <ul>
+                        <li><a href="#">Héberger des voyageurs</a></li>
+                        <li><a href="#">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Assistance</h3>
+                    <ul>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Support client</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
